@@ -4,6 +4,7 @@ declare (strict_types = 1);
 namespace mztp\curd;
 
 use think\facade\Db;
+use mztp\ext\MLog;
 
 
 /**

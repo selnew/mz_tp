@@ -4,6 +4,7 @@ declare (strict_types = 1);
 namespace mztp\curd;
 
 use think\facade\Db;
+use mztp\ext\MLog;
 
 /**
  * 读取表数据: 动态连接数据库, 支持跨库
