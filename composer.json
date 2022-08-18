@@ -1,0 +1,29 @@
+{
+    "name": "mirze/mz_tp",
+    "description": "thinkphp6 composer library",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "mirze",
+            "email": "mirzeAdv@163.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=7.1.0"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "@stable"
+    },
+    "autoload": {
+        "psr-4": {
+            "mztp\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "mztp\\": "src/"
+        }
+    }
+}
