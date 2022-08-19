@@ -14,7 +14,7 @@ use mztp\ext\MLog;
  */
 class CurdDb
 {
-    public $pageSize = 15;
+    public $pageSize = 20;
 
     // 获取主键ID对应字段值
     function getFieldValue($tableName='', $id=0, $field='', $pk='id')

@@ -15,7 +15,7 @@ use mztp\ext\MLog;
 class CurdMDb
 {
     public $db = null;
-    public $pageSize = 15;
+    public $pageSize = 20;
 
     // 创建实例db读取表对象
     function init($tableName='', $dbName='')
