@@ -146,7 +146,7 @@ class CurdDb
     }
 
     /**
-     * 数组分页：返回data、count、page、size
+     * 数组分页：返回list、count、page、size
      *
      * @param string $tableName 表名
      * @param array $map 查询条件
