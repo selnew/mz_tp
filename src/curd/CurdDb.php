@@ -146,6 +146,54 @@ class CurdDb
     }
 
     /**
+     * 数组分页：返回data、count、page、size
+     *
+     * @param string $tableName 表名
+     * @param array $map 查询条件
+     * @param string $order 排序
+     * @param string $field 字段
+     * @param boolean $isOutField 是否排除字段
+     * @param integer $pageSize 每页记录条数
+     * @param integer $pageNum 页码
+     * @return void
+     * @Author Mirze
+     * @DateTime 2022-12-14
+     */
+    function arrPage($tableName='', $map=[], $order='', $field="", $isOutField=false, $pageSize=20, $pageNum=1)
+    {
+        $orderTmp = ['id'=>'desc'];
+        $order = empty($order) ? $orderTmp : $order;
+
+        $list = [];
+        $count = 0;
+        try {
+            $obj = Db::table($tableName);
+            $count = $obj->where($map)->count();
+
+            if($isOutField) {
+                $obj = $obj->withoutField($field);
+            } else {
+                $obj = $obj->field($field);
+            }
+            $obj = $obj->where($map)->order($order);
+
+            $pageSize = $pageSize > 0 ? $pageSize : $this->pageSize;
+            $pageNum = $pageNum > 1 ? $pageNum : 1; // 页码
+
+            // 数组分页：page
+            $list = $obj->page($pageNum, $pageSize)->select();
+            $list = $list->toArray();
+        } catch (\Exception $e) {
+        }
+
+        $result['list'] = $list;
+        $result['count'] = $count;
+        $result['page'] = $pageNum;
+        $result['size'] = $pageSize;
+        return $result;
+    }
+
+    /**
      * 获取所有数据数组
      *
      * @param array $map 查询条件

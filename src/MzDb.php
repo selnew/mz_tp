@@ -89,6 +89,12 @@ class MzDb
         return FCurdDb::listPage($tableName, $isArr, $map, $order, $field, $isOutField, $pageSize, $pageNum);
     }
 
+    // 数组分页：返回data、count、page、size
+    function arrPage($tableName='', $map=[], $order='', $field="", $isOutField=false, $pageSize=20, $pageNum=1)
+    {
+        return FCurdDb::listPage($tableName, $map, $order, $field, $isOutField, $pageSize, $pageNum);
+    }
+
     // 获取所有数据数组
     function listAll($tableName='',$map=[], $order='', $field="", $isOutField=false)
     {
