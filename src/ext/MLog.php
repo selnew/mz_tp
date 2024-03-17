@@ -105,6 +105,20 @@ class MLog
     static function crux($data='', $level='info')
     {
         SELF::write('crux', $level, $data);
-    }    
+    }
+
+    /**
+     * 关键日志：登录日志提取
+     *
+     * @param string $data 数据：可数组
+     * @param string $level 日志通道：apart_level
+     * @return void
+     * @Author Mirze
+     * @DateTime 2024-03-17
+     */
+    static function login($data='', $level='info')
+    {
+        SELF::write('login', $level, $data);
+    }
     
 }
