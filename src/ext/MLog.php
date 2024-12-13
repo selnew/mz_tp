@@ -120,5 +120,19 @@ class MLog
     {
         SELF::write('login', $level, $data);
     }
+
+    /**
+     * 注册日志提取
+     *
+     * @param string $data 数据：可数组
+     * @param string $level 日志通道：apart_level
+     * @return void
+     * @Author Mirze
+     * @DateTime 2024-09-27
+     */
+    static function reg($data='', $level='info')
+    {
+        SELF::write('reg', $level, $data);
+    }
     
 }
